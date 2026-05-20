@@ -6,6 +6,14 @@ export default function HomeScreen() {
   function abrirDenuncia() {
     router.push('/denuncia');
   }
+  
+  function contato(){
+    router.push('/contato')
+  }
+
+  function sobre(){
+    router.push('/sobre')
+  }
 
   return (
     <View style={styles.container}>
@@ -17,7 +25,7 @@ export default function HomeScreen() {
       </Text>
 
       <TouchableOpacity
-        style={styles.botao}
+        style={styles.botaoD}
         onPress={abrirDenuncia}
       >
         <Text style={styles.textoBotao}>
@@ -25,6 +33,24 @@ export default function HomeScreen() {
         </Text>
       </TouchableOpacity>
 
+      <TouchableOpacity
+        style={styles.botaoC}
+        onPress={contato}
+      >
+        <Text style={styles.textoBotao}>
+          Contacte-nos
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.botaoS}
+        onPress={sobre}
+      >
+        <Text style={styles.textoBotao}>
+          Sobre
+        </Text>
+      </TouchableOpacity>
+    
     </View>
   );
 }
@@ -48,12 +74,29 @@ const styles = StyleSheet.create({
   subtitulo: {
     fontSize: 18,
     textAlign: 'center',
-    marginBottom: 40,
+    marginBottom: 25,
     color: '#555',
   },
 
-  botao: {
+  botaoD: {
     backgroundColor: '#2E7D32',
+    marginBottom: 10,
+    paddingVertical: 15,
+    paddingHorizontal: 40,
+    borderRadius: 10,
+  },
+
+  botaoC: {
+    backgroundColor: '#2E7D32',
+    marginBottom: 10,
+    paddingVertical: 15,
+    paddingHorizontal: 40,
+    borderRadius: 10,
+  },
+
+  botaoS: {
+    backgroundColor: '#2E7D32',
+    marginBottom: 10,
     paddingVertical: 15,
     paddingHorizontal: 40,
     borderRadius: 10,
