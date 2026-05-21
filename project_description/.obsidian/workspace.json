@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily/2026-05-17.md",
+                "file": "daily/2026-05-18.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-05-17"
+              "title": "2026-05-18"
             }
           }
         ]
@@ -171,8 +171,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           }
         ]
@@ -197,14 +197,15 @@
   },
   "active": "a3c6d12fe924e204",
   "lastOpenFiles": [
-    "2026-05-17.md",
     "daily/2026-05-17.md",
+    "daily/2026-05-18.md",
+    "kanban/desenvolvimento.md",
+    "kanban/doc.md",
+    "README.md",
+    "2026-05-17.md",
     "daily",
-    "Untitled.md",
     "doc do projeto.md",
     "doc do projeto",
-    "kanban",
-    "kanban/desenvolvimento.md",
-    "kanban/doc.md"
+    "kanban"
   ]
 }
