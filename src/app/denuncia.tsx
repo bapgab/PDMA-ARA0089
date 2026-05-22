@@ -7,7 +7,8 @@ import {
   TextInput,
   View,
 } from "react-native";
-import * as FileSystem from "expo-file-system";
+
+import * as FileSystem from "expo-file-system/legacy";
 
 export default function Denuncia() {
   const [descricao, setDescricao] = useState("");
@@ -23,23 +24,23 @@ export default function Denuncia() {
     const denuncia = {
       tipo,
       descricao,
-      dataCriacao: new Date().toISOString(),
+      dataCriacao: new Date().toISOString(), // usar depois, pode ser o cabeçalho do email junto com a descrição
     };
 
     // Nome do arquivo usa timestamp para evitar sobrescrever denúncias anteriores
-    const fileName = `denuncia_${Date.now()}.json`;
+    const fileName = `denuncia.json`;
     const fileUri = FileSystem.documentDirectory + fileName;
     const jsonString = JSON.stringify(denuncia, null, 2);
 
     try {
       await FileSystem.writeAsStringAsync(fileUri, jsonString);
-      console.log("Salvo em:", fileUri);
+      console.log("Finalmente funcionando, Salvo em:", fileUri);
 
       Alert.alert("Denúncia enviada", "denúncia registrada com sucesso.");
       setDescricao("");
       setTipo("");
     } catch (e) {
-      console.error("Erro ao salvar:", e);
+      console.error("Deu merda dnv, não salvou:", e);
       Alert.alert("Erro", "Não foi possível salvar a denúncia.");
     }
   }
