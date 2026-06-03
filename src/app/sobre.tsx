@@ -1,6 +1,7 @@
-import { Link, Stack } from 'expo-router';
+import { Stack } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 import Layout from './_layout';
+
 
 export default function sobre() {
   return (

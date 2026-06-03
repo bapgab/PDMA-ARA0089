@@ -7,6 +7,7 @@ export default function Layout() {
       <Stack.Screen name="denuncia" />
       <Stack.Screen name="contato" />
       <Stack.Screen name="sobre" />
+      <Stack.Screen name="minhasdenuncias" />
     </Stack>
   );
 }

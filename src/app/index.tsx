@@ -6,51 +6,69 @@ export default function HomeScreen() {
   function abrirDenuncia() {
     router.push('/denuncia');
   }
-  
-  function contato(){
-    router.push('/contato')
+
+  function abrirMinhasDenuncias() {
+    router.push('/minhasdenuncias');
   }
 
-  function sobre(){
-    router.push('/sobre')
+  function contato() {
+    router.push('/contato');
+  }
+
+  function sobre() {
+    router.push('/sobre');
   }
 
   return (
     <View style={styles.container}>
-      
+
       <Text style={styles.titulo}>🐾 PetAlerta</Text>
 
       <Text style={styles.subtitulo}>
-        Sistema de denúncias de maus-tratos animais
+        Protegendo animais através de denúncias anônimas e responsáveis.
       </Text>
 
+      <View style={styles.card}>
+        <Text style={styles.cardTitulo}>
+          Bem-vindo ao PetAlerta
+        </Text>
+
+        <Text style={styles.cardTexto}>
+          Utilize o aplicativo para registrar denúncias de maus-tratos,
+          acompanhar denúncias já realizadas e acessar informações sobre
+          proteção animal.
+        </Text>
+      </View>
+
       <TouchableOpacity
-        style={styles.botaoD}
+        style={styles.botao}
         onPress={abrirDenuncia}
       >
         <Text style={styles.textoBotao}>
-          Fazer denúncia
+          Fazer Denúncia
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
-        style={styles.botaoC}
-        onPress={contato}
-      >
-        <Text style={styles.textoBotao}>
-          Contacte-nos
-        </Text>
-      </TouchableOpacity>
+      <View style={styles.menuInferior}>
 
-      <TouchableOpacity
-        style={styles.botaoS}
-        onPress={sobre}
-      >
-        <Text style={styles.textoBotao}>
-          Sobre
-        </Text>
-      </TouchableOpacity>
-    
+        <TouchableOpacity>
+          <Text style={styles.menuTexto}>🏠 Home</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={abrirMinhasDenuncias}>
+          <Text style={styles.menuTexto}>📋 Denúncias</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={contato}>
+          <Text style={styles.menuTexto}>📞 Contato</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={sobre}>
+          <Text style={styles.menuTexto}>ℹ️ Sobre</Text>
+        </TouchableOpacity>
+
+      </View>
+
     </View>
   );
 }
@@ -65,46 +83,72 @@ const styles = StyleSheet.create({
   },
 
   titulo: {
-    fontSize: 36,
+    fontSize: 38,
     fontWeight: 'bold',
     color: '#2E7D32',
     marginBottom: 10,
   },
 
   subtitulo: {
-    fontSize: 18,
+    fontSize: 16,
+    color: '#555',
     textAlign: 'center',
     marginBottom: 25,
+  },
+
+  card: {
+    backgroundColor: '#fff',
+    width: '95%',
+    padding: 20,
+    borderRadius: 15,
+    marginBottom: 30,
+    elevation: 4,
+  },
+
+  cardTitulo: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#2E7D32',
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+
+  cardTexto: {
+    fontSize: 15,
     color: '#555',
+    textAlign: 'center',
+    lineHeight: 22,
   },
 
-  botaoD: {
+  botao: {
     backgroundColor: '#2E7D32',
-    marginBottom: 10,
-    paddingVertical: 15,
+    paddingVertical: 16,
     paddingHorizontal: 40,
-    borderRadius: 10,
-  },
-
-  botaoC: {
-    backgroundColor: '#2E7D32',
-    marginBottom: 10,
-    paddingVertical: 15,
-    paddingHorizontal: 40,
-    borderRadius: 10,
-  },
-
-  botaoS: {
-    backgroundColor: '#2E7D32',
-    marginBottom: 10,
-    paddingVertical: 15,
-    paddingHorizontal: 40,
-    borderRadius: 10,
+    borderRadius: 12,
+    width: 250,
+    alignItems: 'center',
   },
 
   textoBotao: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
+  },
+
+  menuInferior: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: '#2E7D32',
+    paddingVertical: 15,
+  },
+
+  menuTexto: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 15,
   },
 });
