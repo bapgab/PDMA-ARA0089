@@ -3,6 +3,10 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function HomeScreen() {
 
+  function abrirHome(){
+    router.push('/')
+  }
+
   function abrirDenuncia() {
     router.push('/denuncia');
   }
@@ -51,7 +55,7 @@ export default function HomeScreen() {
 
       <View style={styles.menuInferior}>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={abrirHome}> 
           <Text style={styles.menuTexto}>🏠 Home</Text>
         </TouchableOpacity>
 

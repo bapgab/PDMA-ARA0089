@@ -1,4 +1,4 @@
-import { Stack } from 'expo-router';
+import { Stack, router } from 'expo-router';
 import { StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
 
 
@@ -6,6 +6,26 @@ export default function contato() {
   const abrirEmail = (email) => {
     Linking.openURL(`mailto:${email}`);
   };
+  
+  function abrirHome(){
+    router.push('/')
+  }
+
+  function abrirDenuncia() {
+    router.push('/denuncia');
+  }
+
+  function abrirMinhasDenuncias() {
+    router.push('/minhasdenuncias');
+  }
+
+  function contato() {
+    router.push('/contato');
+  }
+
+  function sobre() {
+    router.push('/sobre');
+  }
 
   return (
     <>
@@ -53,6 +73,27 @@ export default function contato() {
           </TouchableOpacity>
         
         </View>
+
+        <View style={styles.menuInferior}>
+
+          <TouchableOpacity onPress={abrirHome}>
+            <Text style={styles.menuTexto}>🏠 Home</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={abrirMinhasDenuncias}>
+            <Text style={styles.menuTexto}>📋 Denúncias</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={contato}>
+            <Text style={styles.menuTexto}>📞 Contato</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={sobre}>
+            <Text style={styles.menuTexto}>ℹ️ Sobre</Text>
+          </TouchableOpacity>
+
+        </View>
+
       </View>
     </>
   );
@@ -98,6 +139,23 @@ const styles = StyleSheet.create({
     color: 'blue',
     textAlign: 'center',
     lineHeight: 15,
-}
+  },
+  
+  menuInferior: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: '#2E7D32',
+    paddingVertical: 15,
+  },
+
+  menuTexto: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 15,
+  },
 
 });
