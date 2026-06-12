@@ -1,8 +1,12 @@
 import { Stack } from 'expo-router';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
 
 
 export default function contato() {
+  const abrirEmail = (email) => {
+    Linking.openURL(`mailto:${email}`);
+  };
+
   return (
     <>
       <Stack.Screen options={{ title: 'Contato' }} />
@@ -10,43 +14,45 @@ export default function contato() {
       <View style={styles.container}>
 
         <Text style={styles.title}>
-          Entre em contato{"\n"} conosco
+          Suporte técnico:
         </Text>
 
-        <div style={styles.card}>
+        <View style={styles.card}>
          <Text style={styles.subtitle}>
-          telefone
+          Solicitamos que entre em contato conosco exclusivamente por problemas técnicos com o aplicativo.
+          </Text>
+        </View>
+
+        <View style={styles.card}>
+         <Text style={styles.listarContatos}>
+          E-mails:
           </Text>
 
-          <Text style={styles.legenda}>
-           92656126
-           </Text>
-
-        </div>
-
-        <div style={styles.card}>
-         <Text style={styles.subtitle}>
-          whatsap
-          </Text>
-
-          <Text style={styles.legenda}>
-           92656126
-           </Text>
-
-        </div>
-
-        <div style={styles.card}>
-         <Text style={styles.subtitle}>
-          email
-          </Text>
-
-          <Text style={styles.legenda}>
-           usuarios@gmail.com
-           </Text>
-
-        </div>
-
-
+          <TouchableOpacity onPress={() => abrirEmail('202403852497@alunos.estacio.br')}>
+            <Text style={styles.legenda}>
+              {'\n'}202403852497@alunos.estacio.br
+            </Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity onPress={() => abrirEmail('202309398567@alunos.estacio.br')}>
+            <Text style={styles.legenda}>
+              {'\n'}202309398567@alunos.estacio.br
+            </Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity onPress={() => abrirEmail('202202198943@alunos.estacio.br')}>
+            <Text style={styles.legenda}>
+              {'\n'}202202198943@alunos.estacio.br
+            </Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity onPress={() => abrirEmail('202302326617@alunos.estacio.br')}>
+            <Text style={styles.legenda}>
+              {'\n'}202302326617@alunos.estacio.br
+            </Text>
+          </TouchableOpacity>
+        
+        </View>
       </View>
     </>
   );
@@ -65,31 +71,33 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
     color: '#2E7D32',
-    marginBottom: 150,
+    marginBottom: 15,
     textAlign: 'center',
   },
 
   subtitle: {
-    fontSize: 16,
+    fontSize: 15,
     fontWeight:'bold',
     color: '#2E7D32',
     textAlign: 'center',
-    marginBottom: 35,
-    lineHeight: 24,
-    paddingRight:12,
+    marginBottom: 20,
+    lineHeight: 15,
+    paddingRight: 10,
   },
 
-  card: {
-    padding: 5,
-    paddingLeft:0,
+  listarContatos: {
+    marginTop: 5,
+    fontWeight: 'bold',
+    color: 'black',
+    marginBottom: 5,
+    paddingRight: 15,
   },
   
   legenda: {
     fontSize: 16,
-    color: '#555',
+    color: 'blue',
     textAlign: 'center',
-    marginBottom: 35,
-    lineHeight: 24,
-},
+    lineHeight: 15,
+}
 
 });

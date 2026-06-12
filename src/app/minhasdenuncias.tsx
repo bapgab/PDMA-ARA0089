@@ -7,7 +7,7 @@ export default function MinhasDenuncias() {
 
       <View style={styles.card}>
         <Text style={styles.id}>Denúncia #001</Text>
-        <Text style={styles.status}>Status: Em análise</Text>
+        <Text style={styles.status}>Status: Enviando...</Text>
       </View>
 
       <View style={styles.card}>
@@ -17,7 +17,7 @@ export default function MinhasDenuncias() {
 
       <View style={styles.card}>
         <Text style={styles.id}>Denúncia #003</Text>
-        <Text style={styles.status}>Status: Encaminhada</Text>
+        <Text style={styles.status}>Status: Enviando...</Text>
       </View>
     </View>
   );
